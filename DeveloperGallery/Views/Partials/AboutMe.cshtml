@@ -1,0 +1,23 @@
+﻿@{
+    var User = ViewBag.User;
+}
+
+<div class="container-fluid" 
+     style="background-image : url(../images/wheat.png);color:white;">
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <img src="../@(User.ImageUrl)" class="rounded-circle embed-responsive" alt="Alternate Text" />
+            </div>
+            <div class="col-md-9 col-sm-6">
+                <h1 class="display-2 font-italic font-weight-bold">Who am I?</h1>
+                <p class="display-4">
+                    I am an ASP.NET Core Developer,
+                    <br />
+                    who is currently doing this great web page.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>

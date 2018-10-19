@@ -5,14 +5,30 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using DeveloperGallery.Models;
+using DeveloperGallery.ViewModels;
 
 namespace DeveloperGallery.Controllers
 {
     public class HomeController : Controller
     {
+        readonly string footer = "Abdu Khteeb - This is Assignment #2";
+
         public IActionResult Index()
         {
-            return View();
+            ViewBag.Footer = footer;
+
+            var user = Helpers.Seed.Users.First();
+
+            var projects = Helpers.Seed.Projects.Take(3).ToList();
+
+            if (projects is null) return NotFound();
+            else
+            {
+                var projectsViewModel = new ProjectsViewModel(projects);
+
+                var vm = new HomeViewModel(user, projectsViewModel);
+                return View(vm);
+            }
         }
 
         public IActionResult About()
@@ -39,5 +55,6 @@ namespace DeveloperGallery.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
     }
 }

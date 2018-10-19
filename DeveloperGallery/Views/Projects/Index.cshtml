@@ -1,0 +1,17 @@
+﻿@model ProjectsViewModel
+
+@{
+    ViewBag.Title = "Projects";
+}
+
+<div class="row">
+
+    @foreach (var project in Model.Projects)
+    {
+        <div class="col-12">
+            <partial name="~/Views/Projects/Partials/ProjectCard.cshtml" model="project" />
+        </div>
+    }
+</div>
+
+

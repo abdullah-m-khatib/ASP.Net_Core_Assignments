@@ -1,0 +1,15 @@
+﻿@{ 
+    var Tags = DeveloperGallery.Helpers.Seed.Tags.Take(8);
+}
+
+<div class="row">
+    <div class="col-12 mb-4">
+        <partial name="~/Views/Partials/Widgets/TestLinksWidget.cshtml" />
+    </div>
+    <div class="col-12 mb-4">
+        <partial name="~/Views/Partials/Widgets/SearchWidget.cshtml" />
+    </div>
+    <div class="col-12 mb-4">
+        <partial name="~/Views/Partials/Widgets/TagsWidget.cshtml" model="Tags" />
+    </div>
+</div>

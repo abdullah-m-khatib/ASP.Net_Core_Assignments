@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Tag>
+
+<!-- Tags Widget -->
+<div class="card shadow">
+    <h5 class="card-header">Tags</h5>
+    <div class="card-body">
+        <div class="row">
+            @foreach (var tag in Model)
+            {
+                <div>
+                    <a href="#" class="btn btn-outline-info m-1">@(tag.Name)</a>
+                </div>
+
+            }
+        </div>
+    </div>
+</div>

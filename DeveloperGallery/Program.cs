@@ -14,6 +14,8 @@ namespace DeveloperGallery
     {
         public static void Main(string[] args)
         {
+            Helpers.Seed.InitData();
+
             CreateWebHostBuilder(args).Build().Run();
         }
 

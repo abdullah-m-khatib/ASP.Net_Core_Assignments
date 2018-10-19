@@ -1,0 +1,65 @@
+﻿@model ProjectDetailsViewModel
+
+@{
+    ViewBag.Title = Model.Project.Title;
+}
+<div class="card shadow mb-4">
+    <!-- Preview Image -->
+    <img class="img-fluid rounded card-img-top" src="../@(Model.Project.ImageUrl)" alt="" />
+
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col-4">
+                <!-- Title -->
+                <h1 class="h1">
+                    @(Model.Project.Title)
+                </h1>
+
+            </div>
+            <div class="offset-5 col-2">
+                <button class=" btn btn-outline-primary">
+                    <i class="fa fa-download"></i> Download
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <hr />
+
+        <!-- Author -->
+        <div class="lead">
+            By
+            <a href="#">@(Model.Project.Author.FirstName + " " + Model.Project.Author.LastName)</a>
+
+            <!-- Date/Time -->
+            <p>Posted on @(Model.Project.PostingDate.ToLongDateString())</p>
+
+        </div>
+
+        <hr />
+
+        <div class="card-group btn-group">
+            <!-- Tags -->
+            @foreach (var tag in Model.Project.Tags)
+            {
+                <a href="#" class="shadow btn btn-info rounded m-1">@(tag.Name)</a>
+            }
+
+
+        </div>
+        <hr />
+
+
+        <!-- Project Description -->
+        <p class="card-text">@(Model.Project.Description)</p>
+
+    </div>
+</div>
+
+

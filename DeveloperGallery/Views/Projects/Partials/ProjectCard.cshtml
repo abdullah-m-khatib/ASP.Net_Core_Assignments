@@ -1,0 +1,19 @@
+﻿@model Project
+<!-- Blog Post -->
+<div class="card shadow mb-4">
+    <img class="card-img-top" src="../@(Model.ImageUrl)" alt="Card image cap">
+    <div class="card-body">
+        <h2 class="card-title"> @(Model.Title) </h2>
+        <p class="card-text"> @(Model.Description) </p>
+        <a href="../Projects/ProjectDetails/@(Model.Id)" class="btn btn-danger">!!! Press Me &rarr;</a>
+        <hr />
+        @foreach (var tag in Model.Tags)
+        {
+            <a href="#" class="shadow btn btn-info rounded m-1">@(tag.Name)</a>
+        }
+    </div>
+    <div class="card-footer text-muted">
+        Posted on @(Model.PostingDate.ToLongDateString()) by
+        <a href="#">@(Model.Author.FirstName + " " + Model.Author.LastName)</a>
+    </div>
+</div>
